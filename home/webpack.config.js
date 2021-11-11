@@ -1,14 +1,14 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const { VueLoaderPlugin } = require("vue-loader");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: 'http://localhost:8080/',
   },
 
   resolve: {
-    extensions: [".jsx", ".js", ".json"],
+    extensions: ['.jsx', '.js', '.json'],
   },
 
   devServer: {
@@ -19,24 +19,24 @@ module.exports = {
     rules: [
       {
         test: /\.m?js/,
-        type: "javascript/auto",
+        type: 'javascript/auto',
         resolve: {
           fullySpecified: false,
         },
       },
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
     ],
@@ -45,19 +45,19 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "home",
-      filename: "remoteEntry.js",
+      name: 'home',
+      filename: 'remoteEntry.js',
       remotes: {
-        dogDetail: "dogDetail@http://localhost:8081/remoteEntry.js",
+        dogDetail: 'dogDetail@http://localhost:8081/remoteEntry.js',
       },
       exposes: {
-        "./Header": "./src/Header.vue",
-        "./mountHeader": "./src/mountHeader",
+        './Header': './src/shared/Header.vue',
+        './mountHeader': './src/mountHeader',
       },
-      shared: require("./package.json").dependencies,
+      shared: require('./package.json').dependencies,
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
 };

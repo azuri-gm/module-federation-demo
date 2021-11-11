@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './App/index.css';
 
 const launchHeader = () => {
   import('home/mountHeader').then((mountHeader) => {

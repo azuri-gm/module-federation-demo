@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import Header from './Header.vue';
+  import Header from '../../shared/Header.vue';
   import Carousel from 'dogDetail/Carousel';
 
   export default {
