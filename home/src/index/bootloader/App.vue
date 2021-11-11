@@ -32,6 +32,7 @@
     background-color: aquamarine;
     height: 100vh;
     max-height: 100vh;
+    border-radius: 8px;
   }
   .carousel {
     display: grid;
