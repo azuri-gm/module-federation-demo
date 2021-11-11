@@ -4,27 +4,26 @@
 
     <div class="detail">
       <img src="https://placedog.net/500/280?id=40" />
-      <div>
-        <h1>Cindy</h1>
-        <p>Cindy is a fabulous dog with a great personality...</p>
-      </div>
     </div>
 
     <hr />
 
-    <h1>More Adoptable Dogs</h1>
+    <h1>Here we load some images</h1>
     <Carousel />
+    <Button text="separate button" />
   </div>
 </template>
 
 <script>
   import Header from 'home/Header';
-  import Carousel from 'dogDetail/Carousel';
+  import Carousel from 'remote1/Carousel';
+  import Button from 'remote1/Button';
 
   export default {
     components: {
       Header,
       Carousel,
+      Button,
     },
   };
 </script>

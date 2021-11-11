@@ -4,7 +4,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   output: {
-    publicPath: 'http://localhost:8080/',
+    publicPath: 'http://localhost:8081/',
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 8081,
   },
 
   module: {
@@ -45,14 +45,16 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: 'home',
+      name: 'remote1',
       filename: 'remoteEntry.js',
       remotes: {
+        home: 'home@http://localhost:8080/remoteEntry.js',
         remote1: 'remote1@http://localhost:8081/remoteEntry.js',
       },
       exposes: {
-        './Header': './src/shared/Header.vue',
-        './mountHeader': './src/mountHeader',
+        './Carousel': './src/Carousel.vue',
+        './CTA': './src/CTA.vue',
+        './Button': './src/Button.vue',
       },
       shared: require('./package.json').dependencies,
     }),

@@ -2,15 +2,15 @@
   <div class="carousel">
     <div>
       <img src="https://placedog.net/500/280?id=60" />
-      <h1>Cutie</h1>
+      <h1>Image 1</h1>
     </div>
     <div>
       <img src="https://placedog.net/500/280?id=61" />
-      <h1>Ace</h1>
+      <h1>Image 2</h1>
     </div>
     <div>
       <img src="https://placedog.net/500/280?id=62" />
-      <h1>Spot</h1>
+      <h1>Image 3</h1>
     </div>
   </div>
 </template>

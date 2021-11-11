@@ -1,24 +1,25 @@
 <template>
   <div class="container">
     <Header />
-    <h1>This is a header</h1>
-    <p>Some text for this micro application.</p>
+    <h1>Great Dogs Deserve Great Homes!</h1>
+    <p>
+      We are an adoption agency committed to putting wonderful adoptable dogs
+      into great permanent homes...
+    </p>
 
+    <h1>Adoptable Dogs</h1>
     <Carousel />
-    <CTA />
   </div>
 </template>
 
 <script>
-  import Header from '../../shared/Header.vue';
+  import Header from './Header.vue';
   import Carousel from 'remote1/Carousel';
-  import CTA from 'remote1/CTA';
 
   export default {
     components: {
       Header,
       Carousel,
-      CTA,
     },
   };
 </script>
@@ -31,7 +32,6 @@
     background-color: aquamarine;
     height: 100vh;
     max-height: 100vh;
-    border-radius: 8px;
   }
   .carousel {
     display: grid;
