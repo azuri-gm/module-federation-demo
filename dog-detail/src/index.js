@@ -1,1 +1,1 @@
-import('./bootloader');
+import('./index/bootloader');
