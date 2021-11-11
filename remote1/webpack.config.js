@@ -54,7 +54,7 @@ module.exports = {
       exposes: {
         './Carousel': './src/Carousel.vue',
         './CTA': './src/CTA.vue',
-        './Button': './src/Button.vue',
+        './Button': './src/components/Button.vue',
       },
       shared: require('./package.json').dependencies,
     }),
